@@ -1,0 +1,90 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="8Z#Q3Rv9vqi9!kY}K6v#">i</variable>
+    <variable id="s,Bj|n~282YqtUK-BT[g">vxing</variable>
+    <variable id="jI@2jMl4_[W7z%(5ps]G">j</variable>
+  </variables>
+  <block type="controls_for" id="Fn`bPM-}rl,NZ@(z[Emv" x="146" y="-294">
+    <field name="VAR" id="8Z#Q3Rv9vqi9!kY}K6v#">i</field>
+    <value name="FROM">
+      <shadow type="math_number" id="u06n#9.wjY*,4S!XskM[">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id="lQ|Cg:b--+yFE4GQAHnK">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id="]MlU*kUd+K4zH/~g!_dY">
+        <field name="NUM">-1</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="Fj*C~-q/qLeVpxvE4E[)">
+        <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+        <value name="VALUE">
+          <block type="text" id="}zfBt*{]Yo`*eZq}5bnO">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_for" id="j.kQV$CQT}?4vWgy}8n6">
+            <field name="VAR" id="jI@2jMl4_[W7z%(5ps]G">j</field>
+            <value name="FROM">
+              <shadow type="math_number" id="3=ZrccZ]97d07VlJjS3C">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="[{Z~-tzWThE0D7U%QPb4">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="variables_get" id=")D,T]VQv{Pg6GvNLoX3x">
+                <field name="VAR" id="8Z#Q3Rv9vqi9!kY}K6v#">i</field>
+              </block>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="Qb,fm]b*cnV8hl`a=HK%">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="fy-5H3dx(+RZW@H*R=K8">
+                <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                <value name="VALUE">
+                  <block type="text_join" id="h4p6E:}__:cV{op]NXrX">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="variables_get" id="YDd:=nFxz;cUXaT{9,l8">
+                        <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id=")uaET,+0_-5mjZ%=;vfM">
+                        <field name="TEXT">*</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="text_print" id="M@WgP:4Y~oC?bC3nvckS">
+                <value name="TEXT">
+                  <shadow type="text" id="a6n([V5iif4=M)ogyPNb">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="7`#b9=I[(V..AgU8L9u?">
+                    <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

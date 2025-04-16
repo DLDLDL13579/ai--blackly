@@ -1,0 +1,66 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_loadFile" id="%y25mt2zEXm5Y/0Na[DA" x="37" y="97">
+    <field name="NAME">OpenCV</field>
+    <field name="filepath">D:/Blockly-AI-Program/sourcecode/images/zebra.png</field>
+    <next>
+      <block type="doStatement" id=":VCc(#V@Z0eF5ic]%kpo">
+        <field name="name">执行语句</field>
+        <field name="TEXT">print("原始分辨率：", img.shape)</field>
+        <next>
+          <block type="doStatement" id="``e;VlFUyWZ7aLqBvy~[">
+            <field name="name">执行语句</field>
+            <field name="TEXT">for i, (w, h) in enumerate([img.shape[1::-1], (320,240), (160,120)]):</field>
+            <next>
+              <block type="doStatement" id="y8u/efl!u.6A|XpQcAv:">
+                <field name="name">执行语句</field>
+                <field name="TEXT">    resized = cv2.resize(img, (w, h))</field>
+                <next>
+                  <block type="doStatement" id="S{$/D(6brV%GMZ{pje!p">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">    win = f"{w}x{h}"</field>
+                    <next>
+                      <block type="doStatement" id="f1%c`VrN{O}r.B$FqrX$">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">    cv2.imshow(win, resized)</field>
+                        <next>
+                          <block type="doStatement" id="fO=$=Mk0?q{zsvGaEX[7">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">    cv2.moveWindow(win, i*(w+20), 0) </field>
+                            <next>
+                              <block type="doStatement" id="~1gC(#.omz~9tryRKq[:">
+                                <field name="name">执行语句</field>
+                                <field name="TEXT">    cv2.setMouseCallback(win, lambda e,x,y,_,__,r=resized,wn=win:</field>
+                                <next>
+                                  <block type="doStatement" id="0qV^0:n(zIZ#STVOb9.i">
+                                    <field name="name">执行语句</field>
+                                    <field name="TEXT">        cv2.setWindowTitle(wn, f"{wn} | Pixel: {r[y,x]}") if e == cv2.EVENT_MOUSEMOVE else None)</field>
+                                    <next>
+                                      <block type="doStatement" id="9p9Bej?$)c?`J?,lazxj">
+                                        <field name="name">执行语句</field>
+                                        <field name="TEXT">cv2.waitKey(0)</field>
+                                        <next>
+                                          <block type="doStatement" id="]8NrK5L.@,yBu{SqSANU">
+                                            <field name="name">执行语句</field>
+                                            <field name="TEXT">cv2.destroyAllWindows()</field>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

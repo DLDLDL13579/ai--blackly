@@ -1,0 +1,46 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_diabetes
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.preprocessing import StandardScaler, LabelBinarizer
+
+
+
+# 加载示例数据集（例如，diabetes数据集）
+diabetes = load_diabetes()
+X = diabetes.data
+y = diabetes.target
+
+# 将数据集拆分为训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 初始化并训练决策树分类器
+clf = DecisionTreeClassifier(random_state=42)
+clf.fit(X_train, y_train)
+
+# 对测试集进行预测
+y_pred = clf.predict(X_test)
+report = classification_report(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+
+print("Classification Report:")
+print(report)
+print("\nAccuracy:", accuracy)
+
+# 绘制预测值与真实值的对比图
+plt.figure(figsize=(10, 5))
+plt.plot(range(len(y_test)), y_test, color='blue', label='True value', marker='o')
+plt.plot(range(len(y_pred)), y_pred, color='red', label='Predicted value', marker='x')
+
+# 添加图表标题和标签
+plt.title('Predicted value vs True value')
+
+plt.xlabel('index')
+plt.ylabel('target')
+plt.legend()
+plt.grid(True)
+
+# 显示图表
+plt.show()

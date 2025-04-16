@@ -1,0 +1,53 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="G[H3S2C8U3;][-xsGJI#">youAge</variable>
+  </variables>
+  <block type="variables_set" id="!}Rkl[E3~iJ-b)O)C63_" x="95" y="64">
+    <field name="VAR" id="G[H3S2C8U3;][-xsGJI#">youAge</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="Aidp86I,_vfy+q:ZbTRV">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <shadow type="text" id="`Src*/Qqpzt~xe4VuM-T">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text" id="1L:kD)t87CbQYfQ27ZnQ">
+            <field name="TEXT">请输入年龄：</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if" id="|?y}P4wP6nFm0K#e^yEO">
+        <value name="IF0">
+          <block type="logic_compare" id="ki,|PgOY=yy-h}-l.3LF">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="variables_get" id="np8:oNe]|N4UrOa4X;.9">
+                <field name="VAR" id="G[H3S2C8U3;][-xsGJI#">youAge</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="x[R^KUFb9vdPCVehiWd]">
+                <field name="NUM">20</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="text_print" id="Z}|pmFJ|$X^;5]G$Bsh9">
+            <value name="TEXT">
+              <shadow type="text" id="5ceQoF`qmu?lkBx1[l.J">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="variables_get" id=".~%SYt,NRiDhg[vv#,Y~">
+                <field name="VAR" id="G[H3S2C8U3;][-xsGJI#">youAge</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

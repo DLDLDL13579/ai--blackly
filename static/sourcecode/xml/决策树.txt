@@ -1,0 +1,29 @@
+# 导入必要的库
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_squared_error
+
+# 加载加州住房数据集
+california_housing = fetch_california_housing()
+X, y = california_housing.data, california_housing.target
+
+# 将数据集拆分为训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 创建CART决策树回归器
+cart_regressor = DecisionTreeRegressor(random_state=42)
+
+# 在训练集上训练模型
+cart_regressor.fit(X_train, y_train)
+
+# 在测试集上进行预测
+y_pred = cart_regressor.predict(X_test)
+
+# 计算并打印均方误差
+mse = mean_squared_error(y_test, y_pred)
+print(f"Mean Squared Error: {mse}")
+
+# 可选：查看特征重要性
+feature_importances = cart_regressor.feature_importances_
+print("Feature importances:", feature_importances)

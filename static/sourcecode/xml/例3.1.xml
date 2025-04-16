@@ -1,0 +1,24 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="D*=%AKT:o#NuFC7.YWl$" x="85" y="41">
+    <field name="NAME">Scikit-Learn</field>
+    <next>
+      <block type="ai_datasetfromfile" id="W*UcE:3}@%?_VgK7Kwjj">
+        <field name="datapath">D:/Blockly-AI-Program/sourcecode/datasets/Wholesale_customers/Wholesale_customers.csv</field>
+        <field name="target">Channel, Region</field>
+        <field name="train_size">0.8</field>
+        <field name="val_size">0</field>
+        <field name="test_size">0.2</field>
+        <next>
+          <block type="ai_buildmodel" id="c?fFV^EN?[*kLH1e[Zs{">
+            <field name="NAME">kmeans</field>
+            <next>
+              <block type="ai_predictmodel" id=".||3/oZ^rBkZDvGn7216">
+                <field name="NAME">kmeans</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

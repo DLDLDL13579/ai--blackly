@@ -1,0 +1,86 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="fy(VqW}U|%TIA-=hflzn">comment</variable>
+    <variable id="rK`f;e}@|fRWB6w3L|8,">vocabulary</variable>
+    <variable id="aa,^yMFdo_+1`+x$t20b">vector</variable>
+    <variable id=";i2]UJjeFe;S?D1GKPU-">comment1</variable>
+    <variable id="It_QT_;r^7vA]BI?a]eB">comment2</variable>
+  </variables>
+  <block type="procedures_defreturn" id="d@($-I$U4n$H.f;o-9dp" x="10" y="-404">
+    <mutation>
+      <arg name="comment" varid="fy(VqW}U|%TIA-=hflzn"></arg>
+      <arg name="vocabulary" varid="rK`f;e}@|fRWB6w3L|8,"></arg>
+    </mutation>
+    <field name="NAME">get_bag_of_words_vector</field>
+    <comment pinned="false" h="80" w="160">描述该功能...</comment>
+    <statement name="STACK">
+      <block type="doStatement" id=")XvBw#=}Q7H9US5eptW.">
+        <field name="name">执行语句</field>
+        <field name="TEXT">words = [word for word in vocabulary if word in comment]</field>
+        <next>
+          <block type="doStatement" id="fK*9o1=zTz?#*L_GdnK,">
+            <field name="name">执行语句</field>
+            <field name="TEXT">vector = [1 if word in words else 0 for word in vocabulary]</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="4#+[q`zE/O*.4w/x7oJH">
+        <field name="VAR" id="aa,^yMFdo_+1`+x$t20b">vector</field>
+      </block>
+    </value>
+  </block>
+  <block type="variables_set" id="zoAE,_%4,Y)D,Z;2++V=" x="7" y="-277">
+    <field name="VAR" id="rK`f;e}@|fRWB6w3L|8,">vocabulary</field>
+    <value name="VALUE">
+      <block type="text" id="rC~6S,UPx,SimV.m2=@L">
+        <field name="TEXT">["古镇", "风景", "文化", "悠久", "河流", "山景", "自然", "美丽"]</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="duyV[]!;bT7ubh.=16JH">
+        <field name="VAR" id=";i2]UJjeFe;S?D1GKPU-">comment1</field>
+        <value name="VALUE">
+          <block type="text" id="U}Abw@Z^=~fo2P|E#*=X">
+            <field name="TEXT">"李庄古镇的风景非常美丽，山景让人心旷神怡。"</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="}R$zk|oUk(ic*IA(+JL,">
+            <field name="VAR" id="It_QT_;r^7vA]BI?a]eB">comment2</field>
+            <value name="VALUE">
+              <block type="text" id="elGa;:N:NmqO/C(5avtl">
+                <field name="TEXT">"古镇的文化悠久，风景给人留下深刻印象。"</field>
+              </block>
+            </value>
+            <next>
+              <block type="doStatement" id="2MC[L/%6Yz^/7rqXs-}8">
+                <field name="name">执行语句</field>
+                <field name="TEXT">vector1 = get_bag_of_words_vector(comment1, vocabulary)</field>
+                <next>
+                  <block type="doStatement" id="$!d:Ri~D5@#[r1X62z.#">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">vector2 = get_bag_of_words_vector(comment2, vocabulary)</field>
+                    <next>
+                      <block type="doStatement" id="+XHFC^t:(5{CN8#/g:rT">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">print(vector1)</field>
+                        <next>
+                          <block type="doStatement" id="i~|+[LX8]%v/+]W8%g=H">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">print(vector2)</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

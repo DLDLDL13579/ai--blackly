@@ -1,0 +1,29 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="`!$H7r%@K;1FUso8cIlk" x="144" y="25">
+    <field name="NAME">Keras</field>
+    <next>
+      <block type="ai_dataset" id="zr;m,NkOoQ`+%:^L}%=~">
+        <field name="NAME">Keras</field>
+        <field name="datasetname">catdog</field>
+        <field name="train_size">80%</field>
+        <field name="val_size">10%</field>
+        <field name="test_size">10%</field>
+        <next>
+          <block type="ai_buildmodel" id="GgLEl9(vGPf+yNYsIUCG">
+            <field name="NAME">AlexNet5</field>
+            <next>
+              <block type="ai_trainmodel" id="V5.onf@|LmRR+91|u`rB">
+                <field name="NAME">AlexNet5</field>
+                <next>
+                  <block type="ai_savemodel" id="}@)2oa!FBnA:v4uRVTM8">
+                    <field name="NAME">AlexNet5</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

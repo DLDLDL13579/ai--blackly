@@ -1,0 +1,105 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="ZN{Ak9`fC{!D?r//T+)+">file_path</variable>
+    <variable id="~XUSWn~}EZp1FFxqG,5`">sr</variable>
+    <variable id="[3Yf-6:wFE4{{M3H5$S=">n_mfcc</variable>
+    <variable id="|RD]FM|7`hFF$etZGVES">data_dir</variable>
+    <variable id="8Z#Q3Rv9vqi9!kY}K6v#">label</variable>
+  </variables>
+  <block type="procedures_defreturn" id="Stn:,5R}`mC0,}vmdVU^" x="48" y="28">
+    <mutation>
+      <arg name="file_path" varid="ZN{Ak9`fC{!D?r//T+)+"></arg>
+      <arg name="sr" varid="~XUSWn~}EZp1FFxqG,5`"></arg>
+      <arg name="n_mfcc" varid="[3Yf-6:wFE4{{M3H5$S="></arg>
+    </mutation>
+    <field name="NAME">extract_mfcc</field>
+    <comment pinned="false" h="80" w="160">描述该功能...</comment>
+    <statement name="STACK">
+      <block type="doStatement" id="U)s-6x)yY@$9q)i6pH.)">
+        <field name="name">执行语句</field>
+        <field name="TEXT">y,sr=librosa.load(file_path)</field>
+        <next>
+          <block type="doStatement" id="oj)(B%r0u1jc8cg+Y9tP">
+            <field name="name">执行语句</field>
+            <field name="TEXT">mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=n_mfcc)</field>
+            <next>
+              <block type="doStatement" id="x5`esT%sa`U=nPICtdFY">
+                <field name="name">执行语句</field>
+                <field name="TEXT">mean_mfcc = np.mean(mfccs.T, axis=0)</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="qE`#/w#P)X.|o@6u|W5k" x="46" y="183">
+    <mutation>
+      <arg name="data_dir" varid="|RD]FM|7`hFF$etZGVES"></arg>
+    </mutation>
+    <field name="NAME">load_dataset</field>
+    <comment pinned="false" h="80" w="160">描述该功能...</comment>
+    <statement name="STACK">
+      <block type="doStatement" id="O_]$ekbWBD]GPzI,l#u2">
+        <field name="name">执行语句</field>
+        <field name="TEXT">X = [],y = []</field>
+        <next>
+          <block type="controls_for" id="]FdY,SO?qlb;iBB@`?Yz">
+            <field name="VAR" id="8Z#Q3Rv9vqi9!kY}K6v#">label</field>
+            <value name="FROM">
+              <shadow type="math_number" id="03yq:]hOt;o,3g_EO=GY">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="K;TwgS4q=(5{dN~BAOW`">
+                <field name="NUM">9</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="wYuPq[T7R`mzD14S?9/p">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="doStatement" id="dGSpxs?jpy?{U)neegP]">
+                <field name="name">执行语句</field>
+                <field name="TEXT">label_dir = os.path.join(data_dir, f'{label}')</field>
+                <next>
+                  <block type="doStatement" id="wog(qj-V_?L%hfLU1onD">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">for file_name in os.listdir(label_dir):</field>
+                    <next>
+                      <block type="doStatement" id="Npz^H;`lT1(kY$%7q0~C">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">    file_path = os.path.join(label_dir, file_name)</field>
+                        <next>
+                          <block type="doStatement" id="??R`2I6d`vPMNYa]~]=4">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">    mfcc = extract_mfcc(file_path)</field>
+                            <next>
+                              <block type="doStatement" id="KxV5^3lvXZAI0-d!cGHl">
+                                <field name="name">执行语句</field>
+                                <field name="TEXT">    X.append(mfcc)</field>
+                                <next>
+                                  <block type="doStatement" id="Av:.Q$`E9*!hrVfY_y.r">
+                                    <field name="name">执行语句</field>
+                                    <field name="TEXT">    y.append(label)</field>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

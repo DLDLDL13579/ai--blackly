@@ -1,0 +1,26 @@
+import numpy as np
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import load_iris
+# 加载Iris数据集
+dataset= load_iris()
+X = dataset.data
+y = dataset.target
+dataset_target_names=dataset.target_names
+# 将数据集划分为训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 初始化逻辑回归分类器（使用'lbfgs'求解器和'multinomial'多分类策略）
+# 注意：'ovr'（一对多）方法将多酚类问题分解为多个二分类问题来处理这种情况（默认为'auto'）
+
+classifier = LogisticRegression(max_iter=10000, solver='lbfgs', multi_class='ovr', random_state=42)
+# 训练逻辑回归模型
+classifier.fit(X_train, y_train)
+
+# 使用测试集进行预测
+y_pred = classifier.predict(X_test)
+
+# 生成分类报告
+report = classification_report(y_test, y_pred, target_names=dataset_target_names)
+print(report)

@@ -1,0 +1,9 @@
+import pyttsx3
+engine = pyttsx3.init()
+with open('D:/Blockly-AI-Program/sourcecode/datasets/诗经.txt', 'r', encoding='utf-8') as file:
+	content = file.read()
+
+engine.setProperty('rate', 100)  #改变语速，范围:0-200
+engine.setProperty('volume',0.1)  #音量，范围：0.0~1.0
+engine.say(content) # 朗读
+engine.runAndWait()

@@ -1,0 +1,9 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" id="asd}bwWW}ECK:7Hvc?TW" x="281" y="-97">
+    <value name="TEXT">
+      <shadow type="text" id="~;!@yrTP8wsQ^;Yg7$@E">
+        <field name="TEXT">宜宾学院是一所美丽的大学，我热爱她!</field>
+      </shadow>
+    </value>
+  </block>
+</xml>

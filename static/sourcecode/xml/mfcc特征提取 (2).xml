@@ -1,0 +1,63 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_import" id="Sxqn+7$|F3$?K=3(kYU6" x="68" y="88">
+    <field name="fromfwork">none</field>
+    <field name="importname">pandas</field>
+    <field name="asname">np</field>
+    <next>
+      <block type="ai_import" id="EC_5d8bg}jC,]aUNk$]`">
+        <field name="fromfwork">none</field>
+        <field name="importname">matplotlib.pyplot</field>
+        <field name="asname">plt</field>
+        <next>
+          <block type="ai_loadFile" id="}9a0yUpH^Ep|fiItz9eM">
+            <field name="TOOL">Librosa</field>
+            <field name="TYPE">WAV</field>
+            <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/wav0-9/train/digit_0/1_0.wav</field>
+            <next>
+              <block type="doStatement" id="!$-quI3=~b0xa?+};gaO">
+                <field name="name">执行语句</field>
+                <field name="TEXT">mfcc_features = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)</field>
+                <next>
+                  <block type="doStatement" id="I,.mZu%@45qKpIm.Cx/Q">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">librosa.display.specshow(mfcc_features, x_axis='time', sr=sr)</field>
+                    <next>
+                      <block type="doStatement" id="tXixr9m0)jk_gQ.r7I2}">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">plt.figure(figsize=(10, 4))</field>
+                        <next>
+                          <block type="doStatement" id="CG$C:bC4WPfe-)--HlE@">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">plt.colorbar()</field>
+                            <next>
+                              <block type="doStatement" id="1dcZo)vXdu3{f/q|7?C|">
+                                <field name="name">执行语句</field>
+                                <field name="TEXT">plt.title('MFCC')</field>
+                                <next>
+                                  <block type="doStatement" id="E%MaOM7f2_7R=g[z:Sht">
+                                    <field name="name">执行语句</field>
+                                    <field name="TEXT">plt.tight_layout()</field>
+                                    <next>
+                                      <block type="doStatement" id="nEar]Xf~Y48baFijj}j/">
+                                        <field name="name">执行语句</field>
+                                        <field name="TEXT">plt.show()</field>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

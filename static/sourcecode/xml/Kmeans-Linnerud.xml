@@ -1,0 +1,29 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="R}]@Cx@}qQR*KqaO8kvh" x="16" y="8">
+    <field name="NAME">Scikit-Learn</field>
+    <next>
+      <block type="ai_dataset" id="rJrc7vUl,U`ojnj3,`O3">
+        <field name="NAME">Scikit-Learn</field>
+        <field name="datasetname">Linnerud</field>
+        <field name="train_size">0.8</field>
+        <field name="val_size">0</field>
+        <field name="test_size">0.2</field>
+        <next>
+          <block type="ai_buildmodel" id="uL!$Ry`TaczLj1j[?];o">
+            <field name="NAME">kmeans</field>
+            <next>
+              <block type="ai_trainmodel" id=";~D#CI-ga|ks(%K8Hmq}">
+                <field name="NAME">kmeans</field>
+                <next>
+                  <block type="ai_predictmodel" id="cPI2iHH}J;RAI*]YMrma">
+                    <field name="NAME">kmeans</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

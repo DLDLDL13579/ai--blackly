@@ -1,0 +1,58 @@
+import numpy as np
+import pandas as pd
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+
+# 加载Wine数据集
+dataset= load_wine()
+
+X = dataset.data  # 特征矩阵
+y = dataset.target  # 目标变量（分类标签）
+
+# 1. 读取wine离线数据集（CSV 文件）
+
+dataset = pd.read_csv('D:/Blockly-AI-Program/sourcecode/datasets/wine/wine.csv')
+
+# 获取所有的列名
+all_columns = dataset.columns.tolist()
+target_column = 'class'  # 获取类标列名
+
+# 获取特征列名（排除目标列）
+feature_columns = [col for col in all_columns if col != target_column]
+
+# 2. 准备特征和目标数据
+X= dataset[feature_columns]
+y= dataset[target_column]
+dataset_target_names=y.unique()
+# 划分数据集为训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# 标准化数据
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 在原始特征空间上训练决策树模型，并评估其分类精度
+dt_original = DecisionTreeClassifier(random_state=42)
+dt_original.fit(X_train_scaled, y_train)
+y_pred_original = dt_original.predict(X_test_scaled)
+accuracy_original = accuracy_score(y_test, y_pred_original)
+
+# 使用PCA进行降维（比如降到2维，但这里可以根据需要选择其他维度）
+pca = PCA(n_components=2)  # 降到2维，为了比较也可以选择其他维数
+X_train_pca = pca.fit_transform(X_train_scaled)
+X_test_pca = pca.transform(X_test_scaled)
+
+# 在降维后的特征空间上训练决策树模型，并评估其分类精度
+dt_pca = DecisionTreeClassifier(random_state=42)
+dt_pca.fit(X_train_pca, y_train)
+y_pred_pca = dt_pca.predict(X_test_pca)
+accuracy_pca = accuracy_score(y_test, y_pred_pca)
+
+# 打印结果
+print(f"Accuracy with original features: {accuracy_original:.2f}")
+print(f"Accuracy with PCA-reduced features (2 components): {accuracy_pca:.2f}")

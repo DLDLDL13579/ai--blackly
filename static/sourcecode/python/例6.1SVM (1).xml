@@ -1,0 +1,28 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="cxSy2=arw)^eMOB*T_-$" x="30" y="6">
+    <field name="NAME">Scikit-Learn</field>
+    <next>
+      <block type="ai_loadFile" id="?W%J}w./8=7Ae$mG-SU1">
+        <field name="TOOL">Pandas</field>
+        <field name="TYPE">EXCEL</field>
+        <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/ChnSentiCorp/ChnSentiCorp.xlsx</field>
+        <next>
+          <block type="ai_buildmodel" id="$L(C_N4Lqd@:i/*sR7za">
+            <field name="NAME">SVM</field>
+            <next>
+              <block type="ai_trainmodel" id="[nD-84f6ogz6]gyuNI1L">
+                <field name="NAME">SVM</field>
+                <next>
+                  <block type="ai_savemodel" id="8RVMB/$w`dYb#m#~}!Fp">
+                    <field name="NAME">Keras</field>
+                    <field name="modelpath">D:/Blockly-AI-Program/sourcecode/model/svm_s_model.pkl</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

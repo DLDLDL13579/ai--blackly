@@ -1,0 +1,17 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="cxSy2=arw)^eMOB*T_-$" x="30" y="6">
+    <field name="NAME">Scikit-Learn</field>
+    <next>
+      <block type="ai_loadFile" id="?W%J}w./8=7Ae$mG-SU1">
+        <field name="TOOL">Pandas</field>
+        <field name="TYPE">EXCEL</field>
+        <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/ChnSentiCorp/ChnSentiCorp.xlsx</field>
+        <next>
+          <block type="ai_buildmodel" id="$L(C_N4Lqd@:i/*sR7za">
+            <field name="NAME">custom</field>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

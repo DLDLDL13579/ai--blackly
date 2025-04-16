@@ -1,0 +1,32 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="MIKah}.rY6rAew0Iu~wB">text</variable>
+  </variables>
+  <block type="ai_import" id="X:Y$m4H([[o]gWqu{Z@b" x="-288" y="-148">
+    <field name="fromfwork">none</field>
+    <field name="importname">jieba</field>
+    <field name="asname">none</field>
+    <next>
+      <block type="variables_set" id="u6LOw9^cT?Hr^mUdcpe#">
+        <field name="VAR" id="MIKah}.rY6rAew0Iu~wB">text</field>
+        <value name="VALUE">
+          <block type="text" id="W/(l5ZhxS,3B@TW(~`QR">
+            <field name="TEXT">新修的月亮田晚上非常漂亮，央视中秋晚会有好几个节目在这里表演</field>
+          </block>
+        </value>
+        <next>
+          <block type="doStatement" id="BYvCuqwBj,H0v8Pfqqfu">
+            <field name="name">执行语句</field>
+            <field name="TEXT">words = jieba.cut(text)</field>
+            <next>
+              <block type="doStatement" id="EbskLMWD~n4aaK5sJIvh">
+                <field name="name">执行语句</field>
+                <field name="TEXT">print( "/".join(words))</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

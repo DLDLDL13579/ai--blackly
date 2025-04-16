@@ -1,0 +1,104 @@
+import pandas as pd
+import keras
+import joblib
+
+# 加载数据集（假设数据集已下载并保存为ChnSentiCorp.xlsx'）
+df = pd.read_excel('D:/Blockly-AI-Program/sourcecode/datasets/ChnSentiCorp/ChnSentiCorp.xlsx', sheet_name=0)
+ 
+# 显示 DataFrame 的前几行数据
+#数据预处理
+import re
+
+# 定义去除噪声的函数
+def clean_text(text):
+	# 去除HTML标签
+	text = re.sub(r'<[^>]+>', '', text)
+	# 去除特殊字符和数字
+	text = re.sub(r'[^a-zA-Z\u4e00-\u9fa5]', '', text)
+	return text
+
+# 应用函数清洗数据
+df['review'] = df['review'].apply(clean_text)
+
+#中文分词
+import jieba
+
+# 加载停用词表
+stopwords = set()
+with open('D:/Blockly-AI-Program/sourcecode/datasets/ChnSentiCorp/cn_stopwords.txt', 'r', encoding='utf-8') as f:
+	for line in f:
+		stopwords.add(line.strip())
+
+# 定义分词函数
+def chinese_tokenizer(text):
+	words = jieba.lcut(text)
+	return [word for word in words if word not in stopwords and len(word) > 1]
+
+# 应用函数进行分词
+df['tokens'] = df['review'].apply(chinese_tokenizer)
+
+from keras.preprocessing.sequence import pad_sequences
+
+# 将分词后的文本转换为序列
+max_length = 100
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(df['tokens'])
+sequences = tokenizer.texts_to_sequences(df['tokens'])
+
+# 填充与截断序列
+X = pad_sequences(sequences, maxlen=max_length)
+y = df['label'].values
+
+#特征提取
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+# 将分词后的文本转换为词袋模型特征
+vectorizer = CountVectorizer(tokenizer=chinese_tokenizer, max_features=5000)
+X_bow = vectorizer.fit_transform(df['review']).toarray()
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# 将分词后的文本转换为TF-IDF特征（可选）
+tfidf_vectorizer = TfidfVectorizer(tokenizer=chinese_tokenizer, max_features=5000)
+X_tfidf = tfidf_vectorizer.fit_transform(df['review']).toarray()
+
+#模型构建与训练
+
+from sklearn.svm import LinearSVC
+
+# 初始化SVM分类器（使用线性核）
+svm = LinearSVC(C=1.0, random_state=42)
+
+from sklearn.model_selection import train_test_split
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 训练模型
+svm.fit(X_train, y_train)
+
+#预测与评估
+from sklearn.metrics import accuracy_score, classification_report
+
+# 预测测试集
+y_pred = svm.predict(X_test)
+
+# 计算准确率
+print(f"测试集准确率: {accuracy_score(y_test, y_pred):.4f}")
+
+# 打印分类报告
+print(classification_report(y_test, y_pred))
+
+# 保存模型
+joblib.dump(svm, 'D:/Blockly-AI-Program/sourcecode/model/svm_s_model.pkl')
+# 加载模型
+loaded_model = joblib.load('D:/Blockly-AI-Program/sourcecode/model/svm_s_model.pkl')
+
+# 新样本预测
+new_review = "这家酒店环境很好，服务也很周到，下次还会选择这里。"
+new_tokens = chinese_tokenizer(new_review)
+new_sequence = tokenizer.texts_to_sequences([new_tokens])
+new_X = pad_sequences(new_sequence, maxlen=max_length)
+prediction = loaded_model.predict(new_X)
+
+print(f"情感预测结果: {'正面' if prediction[0] == 1 else '负面'}")

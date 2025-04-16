@@ -1,0 +1,40 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id=")=atV/U:NT?uA?dD!M!q">youAge</variable>
+  </variables>
+  <block type="variables_set" id="#+(u!%%(PaYjGh|[y9Z}" x="294" y="-452">
+    <field name="VAR" id=")=atV/U:NT?uA?dD!M!q">youAge</field>
+    <value name="VALUE">
+      <block type="math_number" id="PT2b2|@?Pk0Ru!o;a|JE">
+        <field name="NUM">18</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="7XMsGI[OYQ1/bf+{6it8">
+        <value name="TEXT">
+          <shadow type="text" id="SYDM;,14#*bS2*R{[Z17">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="(*%^i[|IK9r.OYul9Z|}">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="text" id="X}O0TZ*:Ia3n_gooe[QD">
+                <field name="TEXT">小宜的年龄为</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="G]#%R=;tBdrx1El3z1o^">
+                <field name="VAR" id=")=atV/U:NT?uA?dD!M!q">youAge</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="}yWS*-w..+4.pGRMf[y=">
+                <field name="TEXT">岁</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

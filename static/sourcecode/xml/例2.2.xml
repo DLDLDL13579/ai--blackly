@@ -1,0 +1,13 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id=")=atV/U:NT?uA?dD!M!q">youAge</variable>
+  </variables>
+  <block type="variables_set" id=";]W,8qO(=N?i?ndxRwu%" x="448" y="-450">
+    <field name="VAR" id=")=atV/U:NT?uA?dD!M!q">youAge</field>
+    <value name="VALUE">
+      <block type="math_number" id="~dNDl#I?~T?u7JcPw3GD">
+        <field name="NUM">18</field>
+      </block>
+    </value>
+  </block>
+</xml>

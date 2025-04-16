@@ -1,0 +1,44 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="e(v}le^1wW2E@Q^$#l0]" x="83" y="86">
+    <field name="NAME">OpenCV</field>
+    <next>
+      <block type="ai_datasetfrompath" id="3e2#X,.d@NKi1?)*H=M3">
+        <field name="NAME">OpenCV</field>
+        <field name="datasetname">zebra</field>
+        <field name="train_path">D:/Blockly-AI-Program/sourcecode/datasets/zebra/train/</field>
+        <field name="val_path">D:/Blockly-AI-Program/sourcecode/datasets/zebra/val/</field>
+        <field name="test_path">none</field>
+        <field name="IMG_SIZE">50</field>
+        <field name="BATCH_SIZE">32</field>
+        <field name="EPOCHS">15</field>
+        <next>
+          <block type="ai_buildmodel" id="P)yQ.^K!Y=azFb=_ncEW">
+            <field name="NAME">CNN</field>
+            <next>
+              <block type="ai_trainmodel" id="c5K`7x3EoQAl=#RQm)JH">
+                <field name="NAME">CNN</field>
+                <next>
+                  <block type="ai_savemodel" id="OmhBmFU9AGk$xF6;o~Oe">
+                    <field name="NAME">OpenCV</field>
+                    <field name="modelpath">D:/Blockly-AI-Program/sourcecode/model/zebra_cnn.h5</field>
+                    <next>
+                      <block type="ai_predictmodel" id="3bh4{4V7O(3n4=h/p#I(">
+                        <field name="NAME">CNN</field>
+                        <next>
+                          <block type="ai_predictfile" id="VxXk(i3=f]y$oRv4?XR^">
+                            <field name="NAME">CNN</field>
+                            <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/zebra/val/zebra_crossing/21.png</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

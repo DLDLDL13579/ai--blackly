@@ -1,0 +1,34 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="%WPOZDKf/]]1:Y5+j]Gc" x="16" y="8">
+    <field name="NAME">Keras</field>
+    <next>
+      <block type="ai_dataset" id="e3HOMHf%.@Wyi/Z,?Jje">
+        <field name="NAME">Keras</field>
+        <field name="datasetname">mnist</field>
+        <field name="train_size">5000</field>
+        <field name="val_size">1000</field>
+        <field name="test_size">1000</field>
+        <next>
+          <block type="ai_buildmodel" id="MsK+V=jagYDzq53/6$A5">
+            <field name="NAME">FCNN</field>
+            <next>
+              <block type="ai_trainmodel" id="{)XsKTsG(bz`1.mAxe6(">
+                <field name="NAME">FCNN</field>
+                <next>
+                  <block type="ai_savemodel" id="Q*=F;O|K*BSS2b4:]TxQ">
+                    <field name="NAME">FCNN</field>
+                    <next>
+                      <block type="ai_predictmodel" id="n{*T1T:d(W$z2=53W)yt">
+                        <field name="NAME">FCNN</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

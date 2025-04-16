@@ -1,0 +1,48 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="+$jIL}gxuHHZbC}E,Gb7">i</variable>
+  </variables>
+  <block type="variables_set" id="HiTu;Z_2j-{*Q5q,pY;`" x="390" y="107">
+    <field name="VAR" id="+$jIL}gxuHHZbC}E,Gb7">i</field>
+    <value name="VALUE">
+      <block type="math_number" id="sw__bJm#+[fwPrf`i)ez">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="se:~#fNNdcPzFsqS/wCx">
+        <field name="VAR" id="+$jIL}gxuHHZbC}E,Gb7">i</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="Ojm;:w@KVcpwe4l(DNAT">
+            <field name="OP">ADD</field>
+            <value name="A">
+              <shadow type="math_number" id="l87dGt4^UxBYa2U=`fG_">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="7Rb-|`]C+eBrSX+3?12U">
+                <field name="VAR" id="+$jIL}gxuHHZbC}E,Gb7">i</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="kMK270.|8+{OeV`:Hp)P">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="E(RXac9S6|yCzN_vy.XC">
+            <value name="TEXT">
+              <shadow type="text" id="z%G9v.h:RYO6M[!;+T=O">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="variables_get" id="/:$JlWKv}zkkLGnD@Lql">
+                <field name="VAR" id="+$jIL}gxuHHZbC}E,Gb7">i</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

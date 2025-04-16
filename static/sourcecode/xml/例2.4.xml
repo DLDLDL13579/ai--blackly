@@ -1,0 +1,37 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_join" id="3E;.s0UWIVeWob42^3]F" x="107" y="122">
+    <mutation items="4"></mutation>
+    <value name="ADD0">
+      <block type="text_prompt_ext" id="58du?F:oMRuwb]h6n}/e">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <shadow type="text" id="uaCGd!/Vf)]LR[vPBWQ_">
+            <field name="TEXT">请输入姓名：</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <value name="ADD1">
+      <block type="text" id="cj8rg8MKKL)S{$syIDi)">
+        <field name="TEXT">的年龄为</field>
+      </block>
+    </value>
+    <value name="ADD2">
+      <block type="text_prompt_ext" id="ib-SlsE*{_2rO0z4SQQ]">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <shadow type="text" id=";h9wcL(sVVa70..#5f!E">
+            <field name="TEXT">请输入年龄</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <value name="ADD3">
+      <block type="text" id="yN8Q:bvji!GOn(pz?G.]">
+        <field name="TEXT">岁</field>
+      </block>
+    </value>
+  </block>
+</xml>

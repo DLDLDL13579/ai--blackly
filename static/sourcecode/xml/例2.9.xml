@@ -1,0 +1,55 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="8n#%,M#mg/R;W8pdLOwa">parName</variable>
+    <variable id="%?$Z0P+G45YF`s@fM*)K">joinStr</variable>
+  </variables>
+  <block type="procedures_defreturn" id="xoRRuo{%}v?k%[??CcZ-" x="162" y="90">
+    <mutation>
+      <arg name="parName" varid="8n#%,M#mg/R;W8pdLOwa"></arg>
+    </mutation>
+    <field name="NAME">funGreet</field>
+    <comment pinned="false" h="80" w="160">描述该函数功能...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="Uz@pVpe[Uj+wcwiUa1o?">
+        <field name="VAR" id="%?$Z0P+G45YF`s@fM*)K">joinStr</field>
+        <value name="VALUE">
+          <block type="text_join" id="P@aQ!d}VjT|YhO?{Esp}">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="wh7Rnk~V8pO=/OwnYL//">
+                <field name="TEXT">你好，</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="${:Z66Gz8%jf/zM*N5:r">
+                <field name="VAR" id="8n#%,M#mg/R;W8pdLOwa">parName</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="Rt}z(Ha|9RMi`rcf(s8?">
+        <field name="VAR" id="%?$Z0P+G45YF`s@fM*)K">joinStr</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="PgZw?zlh#$s;L$sf+}m]" x="164" y="291">
+    <value name="TEXT">
+      <shadow type="text" id="D{RUUxrn2LT9J6-e(:]o">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="procedures_callreturn" id="e0(*TH$to+Q3I%nYkYy;">
+        <mutation name="funGreet">
+          <arg name="parName"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="text" id="H(%,P`]Tb(3Dl4/n8%NW">
+            <field name="TEXT">小宜</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

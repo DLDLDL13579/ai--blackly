@@ -1,0 +1,75 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_import" id="Kjp17u|0(v.oVaJK]*M:" x="-282" y="-189">
+    <field name="fromfwork">none</field>
+    <field name="importname">jieba</field>
+    <field name="asname">none</field>
+    <next>
+      <block type="ai_import" id="6;r3Mn+FN,3HI^sU[*L-">
+        <field name="fromfwork">sklearn.feature_extraction.text</field>
+        <field name="importname">TfidfVectorizer</field>
+        <field name="asname">none</field>
+        <next>
+          <block type="ai_import" id="0LEC2B/{%fy$5v4lK!$o">
+            <field name="fromfwork">none</field>
+            <field name="importname">re</field>
+            <field name="asname">none</field>
+            <next>
+              <block type="ai_loadFile" id="~_OBHA$i(6;R3K]uU?Y}">
+                <field name="NAME">Openpyxl</field>
+                <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/评论数据.xlsx</field>
+                <next>
+                  <block type="doStatement" id="22DKPI.N]-z36MSnE{(y">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">comments = df["评论"].tolist()</field>
+                    <next>
+                      <block type="doStatement" id="3ko4A8hj{AeCCm6KNqn?">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">comments_no_punctuation = [re.sub(r"[^\w\s]", "", comment) for comment in comments]</field>
+                        <next>
+                          <block type="doStatement" id="JU78#KV5u?k]!){@xjhO">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">comments_cut = [" ".join(jieba.cut(comment)) for comment in comments_no_punctuation]</field>
+                            <next>
+                              <block type="doStatement" id="foyYbs@{9t_K!S[Pa,Uc">
+                                <field name="name">执行语句</field>
+                                <field name="TEXT">vectorizer = TfidfVectorizer() </field>
+                                <next>
+                                  <block type="doStatement" id="1Uu!d2kILgqRi`%W`Ou3">
+                                    <field name="name">执行语句</field>
+                                    <field name="TEXT">tfidf_matrix = vectorizer.fit_transform(comments_cut)</field>
+                                    <next>
+                                      <block type="doStatement" id="1V%h1^`S+`_In)sgU=Q+">
+                                        <field name="name">执行语句</field>
+                                        <field name="TEXT">feature_names = vectorizer.get_feature_names_out()</field>
+                                        <next>
+                                          <block type="doStatement" id="0vXs[anijk[V8yq9}0ST">
+                                            <field name="name">执行语句</field>
+                                            <field name="TEXT">idf_values = vectorizer.idf_</field>
+                                            <next>
+                                              <block type="doStatement" id="X[ivcG1|3c2G(uAG`l2W">
+                                                <field name="name">执行语句</field>
+                                                <field name="TEXT">print(idf_values)</field>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

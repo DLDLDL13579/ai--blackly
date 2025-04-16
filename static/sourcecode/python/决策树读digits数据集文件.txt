@@ -1,0 +1,35 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# 1. 读取 CSV 文件
+dataset = pd.read_csv('D:/Blockly-AI-Program/sourcecode/datasets/digits/digits.csv')
+
+# 2. 准备特征和目标数据
+all_columns = dataset.columns.tolist()
+target_column='class'
+# 获取特征列名（排除目标列）
+feature_columns = [col for col in all_columns if col != target_column]
+X= dataset[feature_columns]
+y= dataset[target_column]
+
+# 将数据集分为训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# 创建决策树分类器
+clf = DecisionTreeClassifier(random_state=42)
+
+# 训练分类器
+clf.fit(X_train, y_train)
+
+# 在测试集上进行预测
+y_pred = clf.predict(X_test)
+
+# 计算准确率
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# 打印分类报告
+print("Classification Report:")
+print(classification_report(y_test, y_pred))

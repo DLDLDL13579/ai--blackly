@@ -1,0 +1,29 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_framework" id="Y8#y|!^9xtCT7Qwc,Oib" x="84" y="6">
+    <field name="NAME">Scikit-Learn</field>
+    <next>
+      <block type="ai_dataset" id="h~M5@DeO%G1N_Z9Q],N_">
+        <field name="NAME">none</field>
+        <field name="datasetname">california</field>
+        <field name="train_size">80%</field>
+        <field name="val_size">0%</field>
+        <field name="test_size">20%</field>
+        <next>
+          <block type="ai_buildmodel" id="]QlU@xq(KrDCb-=W|7h7">
+            <field name="NAME">LogisticRegression</field>
+            <next>
+              <block type="ai_trainmodel" id="#8Cn[VL9KHCeY%,Z%Bt=">
+                <field name="NAME">LogisticRegression</field>
+                <next>
+                  <block type="ai_predictmodel" id="6o{I!2^8lASZ1BCxV0M1">
+                    <field name="NAME">LogisticRegression</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,142 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="s,Bj|n~282YqtUK-BT[g">vxing</variable>
+    <variable id="8Z#Q3Rv9vqi9!kY}K6v#">i</variable>
+  </variables>
+  <block type="text_print" id="?ewH,U;uA#p)fSc4{i7)" x="97" y="-106">
+    <value name="TEXT">
+      <shadow type="text" id="?R?ISdkJym_hx6zl4huU">
+        <field name="TEXT">***************************</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="controls_repeat_ext" id="F]TcqvMyQp/X1MiE;qs$">
+        <value name="TIMES">
+          <shadow type="math_number" id="Q:.boxU}^;(`bj].rwT(">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="3,.)DY:f;8D{%L8n#b-Q">
+            <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+            <value name="VALUE">
+              <block type="text" id="r}C*[2[:~!W^dfT5_e[m">
+                <field name="TEXT">*&amp;nbsp;</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_for" id="u^b%ZC56UF~2e;ri``y{">
+                <field name="VAR" id="8Z#Q3Rv9vqi9!kY}K6v#">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="TQ5CNXDRCAfNn?-XoX!A">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="8iqQfnvK9yDa}Qu%nF)$">
+                    <field name="NUM">23</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="qC;,?WYw@K7hhK{MwaxF">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="variables_set" id="6Tu|mYT_y~,2xf@J{!0W">
+                    <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                    <value name="VALUE">
+                      <block type="text_join" id="h4p6E:}__:cV{op]NXrX">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="variables_get" id="YDd:=nFxz;cUXaT{9,l8">
+                            <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="text" id=")uaET,+0_-5mjZ%=;vfM">
+                            <field name="TEXT">&amp;nbsp;&amp;nbsp;</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="variables_set" id="hKHT4i`pN(~pgXtjSe$#">
+                    <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                    <value name="VALUE">
+                      <block type="text_join" id="UL1EB=Spc0U?!wzXk)SQ">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="variables_get" id="9r{sjztuqV8?PPVU,Ra~">
+                            <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="text" id="s~j:jlPqeAaQfR$vL+zy">
+                            <field name="TEXT">*</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="text_print" id="M@WgP:4Y~oC?bC3nvckS">
+                        <value name="TEXT">
+                          <shadow type="text">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="variables_get" id="7`#b9=I[(V..AgU8L9u?">
+                            <field name="VAR" id="s,Bj|n~282YqtUK-BT[g">vxing</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="text_print" id="``UcaD`[ru}A3Q.NU$MN">
+            <value name="TEXT">
+              <shadow type="text" id="0Vi^M,D%C:,:VD`.9|tO">
+                <field name="TEXT">***************************</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="controls_for" id="aX}3$NqI9V|B%y$f4SWQ">
+                <field name="VAR" id="8Z#Q3Rv9vqi9!kY}K6v#">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="t0MjbYWj!%XeVls/:|.:">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="Ur9m)RSjCe]]bVIQI}#C">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="S!O:73qbQr0?8daS8I}m">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="text_print" id="U+c50Np17c{^Qg)4tHpT">
+                    <value name="TEXT">
+                      <shadow type="text" id="pPFR3R5L{}j(i9jji{#R">
+                        <field name="TEXT">*</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

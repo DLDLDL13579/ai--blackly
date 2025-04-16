@@ -1,0 +1,85 @@
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1. 读取图像
+def load_image(image_path):
+    """加载低对比度斑马线图像"""
+    image = cv2.imread(image_path)
+    if image is None:
+        raise FileNotFoundError(f"无法加载图像：{image_path}")
+    return image
+
+# 2. 灰度化处理
+def convert_grayscale(image):
+    """将图像转换为单通道灰度图"""
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# 3. CLAHE增强处理
+def apply_clahe(gray_image, clip_limit=2.0, tile_grid_size=(8,8)):
+    """分块调整对比度并融合结果"""
+    clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
+    return clahe.apply(gray_image)
+
+# 4. 效果对比可视化
+def visualize_comparison(original, grayscale, enhanced):
+    """对比原始图像与增强后的细节差异"""
+    plt.figure(figsize=(15, 10))
+    
+    # 显示原始图像
+    plt.subplot(2, 3, 1)
+    plt.imshow(cv2.cvtColor(original, cv2.COLOR_BGR2RGB))
+    plt.title('Original Image')
+    plt.axis('off')
+    
+    # 显示灰度图像
+    plt.subplot(2, 3, 2)
+    plt.imshow(grayscale, cmap='gray')
+    plt.title('Grayscale Image')
+    plt.axis('off')
+    
+    # 显示CLAHE增强结果
+    plt.subplot(2, 3, 3)
+    plt.imshow(enhanced, cmap='gray')
+    plt.title('CLAHE Enhanced')
+    plt.axis('off')
+    
+    # 显示直方图对比
+    plt.subplot(2, 3, 4)
+    plt.hist(grayscale.ravel(), 256, color='gray', alpha=0.7)
+    plt.title('Original Histogram')
+    plt.xlim([0, 256])
+    
+    plt.subplot(2, 3, 5)
+    plt.hist(enhanced.ravel(), 256, color='gray', alpha=0.7)
+    plt.title('Enhanced Histogram')
+    plt.xlim([0, 256])
+    
+    # 显示差异图像
+    plt.subplot(2, 3, 6)
+    diff = cv2.absdiff(grayscale, enhanced)
+    plt.imshow(diff, cmap='gray')
+    plt.title('Difference Map')
+    plt.axis('off')
+    
+    plt.tight_layout()
+    plt.show()
+
+# 主程序
+if __name__ == "__main__":
+    # 参数设置
+    IMAGE_PATH = "zebra_crossing.jpg"  # 替换为你的图像路径
+    CLIP_LIMIT = 2.0       # 对比度限制阈值（推荐2-3）
+    TILE_GRID_SIZE = (8,8) # 分块大小（推荐8x8）
+
+    # 执行处理流程
+    original_image = load_image(IMAGE_PATH)
+    gray_image = convert_grayscale(original_image)
+    enhanced_image = apply_clahe(gray_image, CLIP_LIMIT, TILE_GRID_SIZE)
+    
+    # 可视化对比
+    visualize_comparison(original_image, gray_image, enhanced_image)
+    
+    # 保存结果（可选）
+    cv2.imwrite("enhanced_zebra.jpg", enhanced_image)
+    print("处理完成，增强结果已保存为 enhanced_zebra.jpg")

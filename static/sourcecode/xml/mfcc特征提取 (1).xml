@@ -1,0 +1,27 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_import" id="Sxqn+7$|F3$?K=3(kYU6" x="68" y="88">
+    <field name="fromfwork">none</field>
+    <field name="importname">pandas</field>
+    <field name="asname">np</field>
+    <next>
+      <block type="ai_import" id="EC_5d8bg}jC,]aUNk$]`">
+        <field name="fromfwork">none</field>
+        <field name="importname">matplotlib.pyplot</field>
+        <field name="asname">plt</field>
+        <next>
+          <block type="ai_loadFile" id="}9a0yUpH^Ep|fiItz9eM">
+            <field name="TOOL">Librosa</field>
+            <field name="TYPE">WAV</field>
+            <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/wav0-9/train/digit_0/1_0.wav</field>
+            <next>
+              <block type="doStatement" id="!$-quI3=~b0xa?+};gaO">
+                <field name="name">执行语句</field>
+                <field name="TEXT">mfcc_features = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

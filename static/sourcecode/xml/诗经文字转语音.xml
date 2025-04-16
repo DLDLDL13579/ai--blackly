@@ -1,0 +1,44 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_import" id="NL3it?|~mtTyIJK{cmox" x="75" y="68">
+    <field name="fromfwork">none</field>
+    <field name="importname">pyttsx3</field>
+    <field name="asname">none</field>
+    <next>
+      <block type="doStatement" id="+bp!)^-5%Xj77WXJ@wLz">
+        <field name="name">执行语句</field>
+        <field name="TEXT">engine = pyttsx3.init() # 必不可少</field>
+        <next>
+          <block type="ai_loadFile" id="skI@1X0C$YI_y57F^Pyf">
+            <field name="TOOL">内置工具</field>
+            <field name="TYPE">none</field>
+            <field name="filepath">D:/Blockly-AI-Program/sourcecode/datasets/诗经.txt</field>
+            <next>
+              <block type="doStatement" id="h3n9N/Pn.Awc[tNPZIBd">
+                <field name="name">执行语句</field>
+                <field name="TEXT">engine.setProperty('rate', 100)  #改变语速，范围:0-200</field>
+                <next>
+                  <block type="doStatement" id="iG?s@Y`mE)?T^hn*-cL9">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">engine.setProperty('volume',0.1)  #音量，范围：0.0~1.0</field>
+                    <next>
+                      <block type="doStatement" id="fwKkns#*j6I!Rk:,hx[a">
+                        <field name="name">执行语句</field>
+                        <field name="TEXT">engine.say(text) # 朗读</field>
+                        <next>
+                          <block type="doStatement" id="$dt.5Ou`lMby(6=Rfip:">
+                            <field name="name">执行语句</field>
+                            <field name="TEXT">engine.runAndWait()</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>others</folder>
+	<filename>61.png</filename>
+	<path>C:\Users\admin\Desktop\Zebra_Crossing\others\61.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>50</width>
+		<height>50</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>others</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>6</ymin>
+			<xmax>42</xmax>
+			<ymax>47</ymax>
+		</bndbox>
+	</object>
+</annotation>

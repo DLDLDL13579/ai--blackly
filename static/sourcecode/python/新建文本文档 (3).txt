@@ -1,0 +1,17 @@
+# 描述该功能...
+def get_bag_of_words_vector(comment, vocabulary):
+	global vector, comment1, comment2
+	words = [word for word in vocabulary if word in comment]
+	vector = [1 if word in words else 0 for word in vocabulary]
+	return vector
+
+
+import sklearn
+import pandas as np
+vocabulary = '["古镇", "风景", "文化", "悠久", "河流", "山景", "自然", "美丽"]'
+comment1 = '"李庄古镇的风景非常美丽，山景让人心旷神怡。"'
+comment2 = '"古镇的文化悠久，风景给人留下深刻印象。"'
+vector1 = get_bag_of_words_vector(comment1, vocabulary)
+vector2 = get_bag_of_words_vector(comment2, vocabulary)
+print(vector1)
+print(vector2)

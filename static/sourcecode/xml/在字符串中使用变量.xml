@@ -1,0 +1,57 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="s5_/opj;nd*3+n{c~,(C">first_name</variable>
+    <variable id="{C9eblF_ZR?DY8vnN[ND">last_name</variable>
+    <variable id="B$%7QBSA3lcZaL!5X:75">full_name</variable>
+  </variables>
+  <block type="variables_set" id="+I4tPWSPs9w;K5P/~r:2" x="148" y="230">
+    <field name="VAR" id="s5_/opj;nd*3+n{c~,(C">first_name</field>
+    <value name="VALUE">
+      <block type="text" id="_xSh(p!|EOg,/kGUmQ#Q">
+        <field name="TEXT">李</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="~ChKa2ifs2Zc;]2@y2O/">
+        <field name="VAR" id="{C9eblF_ZR?DY8vnN[ND">last_name</field>
+        <value name="VALUE">
+          <block type="text" id="nj(R6j#-Ezas(tA*?73[">
+            <field name="TEXT">兵</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="5~u_=S.wt=4#SR4fHlTX">
+            <field name="VAR" id="B$%7QBSA3lcZaL!5X:75">full_name</field>
+            <value name="VALUE">
+              <block type="text_join" id="dCW/lvDnkR_oQZEkuFwc">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="variables_get" id="ZA$`+aFWU;N6YdiFa/y~">
+                    <field name="VAR" id="s5_/opj;nd*3+n{c~,(C">first_name</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="{GtezJ+|{Q@h-4Wiw-Lr">
+                    <field name="VAR" id="{C9eblF_ZR?DY8vnN[ND">last_name</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id=")Q99!h8LAP/o0|mDPAU`">
+                <value name="TEXT">
+                  <shadow type="text" id="3-;~(UCgUW1UXOMpYHeg">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="0bLvtmx-7{jhi8mVXe.?">
+                    <field name="VAR" id="B$%7QBSA3lcZaL!5X:75">full_name</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

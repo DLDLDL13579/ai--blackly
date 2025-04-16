@@ -1,0 +1,55 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="Dln5$AsV/E-7nR!ao@)v">name</variable>
+    <variable id="rn}3WpNKk?Wj#5~xA;o/">fstr</variable>
+  </variables>
+  <block type="procedures_defreturn" id="sT)wQ$%4wYB;wbXf:}%." x="183" y="-58">
+    <mutation>
+      <arg name="name" varid="Dln5$AsV/E-7nR!ao@)v"></arg>
+    </mutation>
+    <field name="NAME">greet</field>
+    <comment pinned="false" h="80" w="160">描述该功能...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="Z}GBH(GQ?2gZ.gNg!=|7">
+        <field name="VAR" id="rn}3WpNKk?Wj#5~xA;o/">fstr</field>
+        <value name="VALUE">
+          <block type="text_join" id="vEH[gE@[v!hxsgLxu*bZ">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="XnPng!]0jxE:3(u4,}}2">
+                <field name="TEXT">你好，</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="`G0}GB.7^Y2P|(hXNhXC">
+                <field name="VAR" id="Dln5$AsV/E-7nR!ao@)v">name</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="t5so|H#+yPwkJ5R:oL00">
+        <field name="VAR" id="rn}3WpNKk?Wj#5~xA;o/">fstr</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="rCEMNtL,8$06HKo+{1/N" x="182" y="83">
+    <value name="TEXT">
+      <shadow type="text" id="RGueGt4FXI+;QFpn-Q.R">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="procedures_callreturn" id="#bMAsihsn]Q8zc#[~86L">
+        <mutation name="greet">
+          <arg name="name"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="text" id="-!(ec%)|BM~HatsSX~s1">
+            <field name="TEXT">小宜</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

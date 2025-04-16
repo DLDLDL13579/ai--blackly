@@ -1,0 +1,31 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="ai_import" id="([s}.~Y%?SSjddFdQmLL" x="120" y="37">
+    <field name="fromfwork">none</field>
+    <field name="importname">numpy</field>
+    <field name="asname">np</field>
+    <next>
+      <block type="ai_loadFile" id="BbCq*pZt}Zkz4%P2ce;u">
+        <field name="NAME">OpenCV</field>
+        <field name="filepath">default</field>
+        <next>
+          <block type="doStatement" id="czQoH4J(?IKiM{1xE8N+">
+            <field name="name">执行语句</field>
+            <field name="TEXT">clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))</field>
+            <next>
+              <block type="doStatement" id=".|.Ej@3F0H(@QnLW3g.R">
+                <field name="name">执行语句</field>
+                <field name="TEXT">equ = clahe.apply(img)</field>
+                <next>
+                  <block type="doStatement" id="xi?gdZ=${eB:|T@Ab?M,">
+                    <field name="name">执行语句</field>
+                    <field name="TEXT">comparison = np.hstack([img, equ])</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
